@@ -66,7 +66,7 @@ class GeneralInfo extends React.Component {
 
     changeSampleStrings() {
         if(this.styleSampleString == 'hidden') {
-            this.styleSampleString = 'visible';
+            this.styleSampleString = 'infoForm';
             this.formSampleString = 'hidden';
         } else {
             this.styleSampleString = 'hidden';
@@ -75,11 +75,11 @@ class GeneralInfo extends React.Component {
     }
 
     render() {
-        const { name, email, phone, infoArray, styleDisplay, formDisplay } = this.state;
+        const { name, email, phone, infoArray, formDisplay, styleDisplay } = this.state;
 
         return(
             <div className="generalInfo">
-                <InfoStyled display={styleDisplay} infoArray={infoArray}/>
+                <InfoStyled infoArray={infoArray} display={styleDisplay}/>
                 <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} name={name} phone={phone} email={email} display={formDisplay} />
             </div>
         )
