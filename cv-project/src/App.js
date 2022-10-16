@@ -5,9 +5,15 @@ import Education from './components/Education'
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 
-function App() {
-  return (
-    <div className = "mainContainer">
+class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+  }
+  
+  render() {
+    return (
+      <div className = "mainContainer">
       <div className="topContainer">
       <GeneralInfo/>
       <Education/>
@@ -17,7 +23,8 @@ function App() {
         <Experience/>
       </div>
     </div>
-  );
+    )
+  }
 }
 
 export default App;
