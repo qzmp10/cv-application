@@ -1,6 +1,7 @@
 import React from 'react';
 import InfoStyled from './InfoStyled';
 import InfoForm from "./InfoForm"
+import uniqid from "uniqid";
 
 class GeneralInfo extends React.Component {
 
@@ -8,81 +9,78 @@ class GeneralInfo extends React.Component {
         super(props);
 
         this.state = {
-            info: {
-                name: '',
-                email: '',
-                phone: ''
-            },
+            name: '',
+            email: '',
+            phone: '',
             infoArray: [],
-            infoDisplay: 'hidden',
+            id: uniqid(),
+            styleDisplay: 'hidden',
             formDisplay: 'visible',
         }
+
+        this.formSampleString = 'visible';
+        this.styleSampleString = "hidden";
 
     }
 
     handleChange = (e) => {
         if(e.target.id === "name") {
             this.setState({
-                info: {  
-                    name: e.target.value,
-                    email: this.state.info.email,
-                    phone: this.state.info.phone
-                }
+                name: e.target.value,
             })
         }
         if(e.target.id === "email") {
             this.setState({
-                info: {  
-                    name: this.state.info.name,
-                    email: e.target.value,
-                    phone: this.state.info.phone
-                }
+                email: e.target.value,
             })
         }
         if(e.target.id === "phone") {
             this.setState({
-                info: {  
-                    name: this.state.info.name,
-                    email: this.state.info.email,
-                    phone: e.target.value
-                }
+                phone: e.target.value,
             })
         }
-
+        console.log(this.state.name, this.state.email, this.state.phone)
     }
 
     submitInfo = (e) => {
         e.preventDefault();
 
+        let tempArray = [];
+        tempArray.push(this.state.name);
+        tempArray.push(this.state.email);
+        tempArray.push(this.state.phone);
+
         this.setState({
-            infoArray: this.state.infoArray.concat(this.state.info),
+            infoArray: tempArray
         })
         
-        let sampleString = "hidden"; 
-        let infoSampleString = "visible";
+        this.changeSampleStrings();
 
         this.setState({
-            formDisplay: sampleString,
-            infoDisplay: infoSampleString
+            formDisplay: this.formSampleString,
+            styleDisplay: this.styleSampleString
         })
 
-        console.log(this.state.formDisplay)
-        console.log(this.classes)
-        console.log(document.querySelector('form').classList)
-
+        console.log(this.state.infoArray);
     }
 
-    updateState() {
-        return this.state;
+    changeSampleStrings() {
+        if(this.styleSampleString == 'hidden') {
+            this.styleSampleString = 'visible';
+            this.formSampleString = 'hidden';
+        } else {
+            this.styleSampleString = 'hidden';
+            this.formSampleString = 'visible';   
+        }
     }
 
     render() {
-        const { info, infoArray, infoDisplay, formDisplay } = this.state;
+        const { name, email, phone, infoArray, styleDisplay, formDisplay } = this.state;
 
         return(
             <div className="generalInfo">
-                <InfoStyled display={infoDisplay}/>
-                <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} info={info} display={formDisplay} />
+                <InfoStyled display={styleDisplay} infoArray={infoArray}/>
+                <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} name={name} phone={phone} email={email} display={formDisplay} />
             </div>
         )
     }

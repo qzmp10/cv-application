@@ -8,9 +8,16 @@ class InfoStyled extends React.Component {
 
     render() {
         const {display} = this.props;
+        const {infoArray} = this.props;
 
         return (
-            <div className={display}> Hello ! </div>
+            <div className={display}>  
+            {infoArray.map((info) => {
+                return(
+                    <div className={info} key={info}>{info}</div>
+                )
+            })}
+            </div>
         )
     }
 

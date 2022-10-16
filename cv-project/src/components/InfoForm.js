@@ -9,7 +9,10 @@ class InfoForm extends React.Component {
     render() {
         const { submitInfo } = this.props;
         const { handleChange } = this.props;
-        const { info } = this.props;
+        const { name } = this.props;
+        const { email } = this.props;
+        const { phone } = this.props;
+        
         const { display } = this.props
 
         return(
@@ -19,7 +22,7 @@ class InfoForm extends React.Component {
                       <label htmlFor="name">Name: </label>
                       <input 
                       onChange={handleChange}
-                      value={info.name}
+                      value={name}
                       id="name" 
                       type="text"/>
                     </div>
@@ -28,7 +31,7 @@ class InfoForm extends React.Component {
                       <label htmlFor="phone">Phone number: </label>
                       <input 
                       onChange={handleChange}
-                      value={info.phone}
+                      value={phone}
                       id="phone" 
                       type="tel"/>  
                     </div>
@@ -37,7 +40,7 @@ class InfoForm extends React.Component {
                     <label htmlFor="email">E-mail: </label>
                     <input 
                     onChange={handleChange}
-                      value={info.email}
+                      value={email}
                       id="email" 
                       type="email"/>
                     </div>   
