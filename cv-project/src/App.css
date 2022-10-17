@@ -1,57 +1,43 @@
 body {
   display: flex;
-  justify-content: center;
-  margin: 1rem;
+  flex-direction: column;
   font-family: 'Lato', sans-serif;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.pageHeader {
+  padding: 2rem;
+  margin: 0;
+  background-color: rgb(200, 248, 248);
 }
 
 .mainContainer {
-  border: solid 1px black;
-  width: 55vw;
+  width: 50vw;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  padding: 1rem;
-  gap: 1rem;
   background-color: rgb(255, 255, 255);
-}
-.topContainer {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 1rem;
-  width: 100%;
-  height: 100%;
+  border-radius: 0.6px;
+  padding-left: 2rem;
+  border-right: solid 1px black;
 }
 
-.bottomContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  width: 100%;
-  height: 100%;
-}
 
 .generalInfo {
-  border: solid 1px black;
   width: 100%;
-  height: 100%;
-  font-size: 20px;
+  height: 35%;
 }
 
 .education {
-  border: solid 1px black;
   width: 100%;
   height: 100%;
 }
 
 .projects {
-  border: solid 1px black;
   width: 100%;
   height: 100%;
 }
 
 .experience {
-  border: solid 1px black;
   width: 100%;
   height: 100%;
 }
@@ -63,12 +49,11 @@ body {
   display: block;
 }
 .formHeader {
-  margin: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .inputDiv {
-  margin: 1rem;
+  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -76,7 +61,7 @@ body {
 }
 
 .submit {
-  margin: 1rem;
+  margin-top: 1rem;
 }
 
 /* .infoForm {

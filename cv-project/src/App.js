@@ -13,16 +13,13 @@ class App extends React.Component {
   
   render() {
     return (
-      <div className = "mainContainer">
-      <div className="topContainer">
-      <GeneralInfo/>
-      <Education/>
-      </div>
-      <div className="bottomContainer">
-        <Projects/>
-        <Experience/>
-      </div>
-    </div>
+      <><h1 className='pageHeader'>CV GENERATOR</h1>
+        <div className="mainContainer">
+        <GeneralInfo />
+        <Education />
+        <Projects />
+        <Experience />
+      </div></>
     )
   }
 }
