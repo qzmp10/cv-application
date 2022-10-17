@@ -43,12 +43,6 @@ body {
   height: 100%;
 }
 
-.hidden {
-  display: none;
-}
-.visible {
-  display: block;
-}
 .formHeader {
   margin-bottom: 1.5rem;
 }
@@ -63,6 +57,9 @@ body {
 
 .submit {
   margin-top: 1rem;
+  background-color: rgb(224, 255, 255);
+  border: solid 1px black;
+  padding: 0.3rem;
 }
 
 /* .infoForm {

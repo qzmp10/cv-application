@@ -7,7 +7,7 @@ class Projects extends React.Component {
 
     render() {
         return(
-            <div className="projects">Hello!</div>
+            <div className="projects">Hello</div>
         )
     }
 }

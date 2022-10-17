@@ -75,12 +75,12 @@ class GeneralInfo extends React.Component {
     // }
 
     render() {
-        const { name, email, phone, infoArray, formDisplay, styleDisplay } = this.state;
+        const { name, email, phone, infoArray, formDisplay } = this.state;
 
         return(
             <div className="generalInfo">
                 {/* <InfoStyled infoArray={infoArray} display={styleDisplay}/> */}
-                <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} name={name} phone={phone} email={email} display={formDisplay} />
+                <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} name={name} phone={phone} email={email}/>
             </div>
         )
     }

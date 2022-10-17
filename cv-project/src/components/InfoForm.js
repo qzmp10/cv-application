@@ -13,10 +13,9 @@ class InfoForm extends React.Component {
         const { email } = this.props;
         const { phone } = this.props;
         
-        const { display } = this.props
 
         return(
-            <form onSubmit={submitInfo} className={display}>
+            <form onSubmit={submitInfo}>
                     <h2 className = "formHeader">Enter your information</h2>
                     <div className='inputDiv'>
                       <label htmlFor="name">Name: </label>
