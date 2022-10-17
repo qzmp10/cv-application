@@ -15,15 +15,23 @@ class InfoStyled extends React.Component {
             {infoArray.map((info) => {
                 if(infoArray.indexOf(info) == 0) {
                     return(
-                        <div className='name' key={info}>{info}</div>
+                        <>
+                        <div className='name' key={info}>{info}</div></>
                     )
                 } else if (infoArray.indexOf(info) == 1){
                     return(
-                        <div className='email' key={info}>{info}</div>
+                        <div className="email">
+                            <div>E-mail:</div>
+                            <div className='contact' key={info}>{info}</div>
+                         </div>
+ 
                     )
                 } else {
                     return(
-                        <div className='phone' key={info}>{info}</div>
+                    <div className="phone">
+                        <div>Phone Number:</div>
+                        <div className='contact' key={info}>{info}</div>
+                    </div>   
                     )
                 }
 
