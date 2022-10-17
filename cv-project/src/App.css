@@ -7,15 +7,18 @@ body {
 }
 
 .pageHeader {
-  padding: 2rem;
+  padding: 1.7rem;
   margin: 0;
   background-color: rgb(224, 255, 255);
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.589)
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.589);
+  z-index: 10;
+  position: sticky;
+  top: 0;
 }
 
 .mainContainer {
   width: 40vw;
-  height: 100vh;
+  height: 100%;
   background-color: rgb(255, 250, 240);
   border-radius: 0.6px;
   padding-left: 2rem;

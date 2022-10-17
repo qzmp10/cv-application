@@ -1,4 +1,5 @@
 import React from 'react';
+import ExperienceForm from './ExperienceForm';
 
 class Experience extends React.Component {
     constructor() {
@@ -7,7 +8,7 @@ class Experience extends React.Component {
 
     render() {
         return(
-            <div className="experience">Hello!</div>
+            <ExperienceForm/>
         )
     }
 }
