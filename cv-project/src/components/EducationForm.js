@@ -15,7 +15,7 @@ class EducationForm extends React.Component {
         const {submitEducation} = this.props;
 
         return(
-            <form onSubmit={submitEducation} className=''>
+            <form onSubmit={submitEducation} className='education'>
                     <h2 className = "formHeader">Education</h2>
                     <div className='inputDiv'>
                       <label htmlFor="school">School: </label>
