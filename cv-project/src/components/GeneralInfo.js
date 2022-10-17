@@ -14,12 +14,12 @@ class GeneralInfo extends React.Component {
             phone: '',
             infoArray: [],
             id: uniqid(),
-            styleDisplay: 'hidden',
-            formDisplay: 'visible',
+            // styleDisplay: 'hidden',
+            // formDisplay: 'visible',
         }
 
-        this.formSampleString = 'visible';
-        this.styleSampleString = "hidden";
+        // this.formSampleString = 'visible';
+        // this.styleSampleString = "hidden";
 
     }
 
@@ -54,32 +54,32 @@ class GeneralInfo extends React.Component {
             infoArray: tempArray
         })
         
-        this.changeSampleStrings();
+        // this.changeSampleStrings();
 
-        this.setState({
-            formDisplay: this.formSampleString,
-            styleDisplay: this.styleSampleString
-        })
+        // this.setState({
+        //     formDisplay: this.formSampleString,
+        //     styleDisplay: this.styleSampleString
+        // })
 
         console.log(this.state.infoArray);
     }
 
-    changeSampleStrings() {
-        if(this.styleSampleString == 'hidden') {
-            this.styleSampleString = 'infoForm';
-            this.formSampleString = 'hidden';
-        } else {
-            this.styleSampleString = 'hidden';
-            this.formSampleString = 'visible';   
-        }
-    }
+    // changeSampleStrings() {
+    //     if(this.styleSampleString == 'hidden') {
+    //         this.styleSampleString = 'infoForm';
+    //         this.formSampleString = 'hidden';
+    //     } else {
+    //         this.styleSampleString = 'hidden';
+    //         this.formSampleString = 'visible';   
+    //     }
+    // }
 
     render() {
         const { name, email, phone, infoArray, formDisplay, styleDisplay } = this.state;
 
         return(
             <div className="generalInfo">
-                <InfoStyled infoArray={infoArray} display={styleDisplay}/>
+                {/* <InfoStyled infoArray={infoArray} display={styleDisplay}/> */}
                 <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} name={name} phone={phone} email={email} display={formDisplay} />
             </div>
         )
