@@ -4,6 +4,7 @@ import GeneralInfo from './components/GeneralInfo';
 import Education from './components/Education'
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import CvHeader from './components/CvHeader';
 
 class App extends React.Component {
 
@@ -25,7 +26,7 @@ class App extends React.Component {
       </div>
 
       <div className = 'cvContainer'>
-        <div className='ceevee'>hey</div>
+        <CvHeader/>
       </div>
       </div>
       </>

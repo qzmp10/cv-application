@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoStyled from './InfoStyled';
+import InfoStyled from './CvHeader';
 import InfoForm from "./InfoForm"
 import uniqid from "uniqid";
 
