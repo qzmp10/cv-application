@@ -14,12 +14,21 @@ class App extends React.Component {
   render() {
     return (
       <><h1 className='pageHeader'>CV GENERATOR</h1>
-        <div className="mainContainer">
+
+      <div className='pageContainer'>
+
+      <div className="formContainer">
         <GeneralInfo />
         <Education />
         <Experience />
         <Projects />
-      </div></>
+      </div>
+
+      <div className = 'cvContainer'>
+        <div className='ceevee'>hey</div>
+      </div>
+      </div>
+      </>
     )
   }
 }
