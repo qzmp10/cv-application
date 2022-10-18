@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoStyled from './CvHeader';
+import CvHeader from './CvHeader';
 import InfoForm from "./InfoForm"
 import uniqid from "uniqid";
 
@@ -14,12 +14,7 @@ class GeneralInfo extends React.Component {
             phone: '',
             infoArray: [],
             id: uniqid(),
-            // styleDisplay: 'hidden',
-            // formDisplay: 'visible',
         }
-
-        // this.formSampleString = 'visible';
-        // this.styleSampleString = "hidden";
 
     }
 
@@ -39,6 +34,7 @@ class GeneralInfo extends React.Component {
                 phone: e.target.value,
             })
         }
+
         console.log(this.state.name, this.state.email, this.state.phone)
     }
 
@@ -53,33 +49,18 @@ class GeneralInfo extends React.Component {
         this.setState({
             infoArray: tempArray
         })
-        
-        // this.changeSampleStrings();
 
-        // this.setState({
-        //     formDisplay: this.formSampleString,
-        //     styleDisplay: this.styleSampleString
-        // })
+        this.props.callbackFn(this.state.name, this.state.email, this.state.phone);
 
         console.log(this.state.infoArray);
     }
 
-    // changeSampleStrings() {
-    //     if(this.styleSampleString == 'hidden') {
-    //         this.styleSampleString = 'infoForm';
-    //         this.formSampleString = 'hidden';
-    //     } else {
-    //         this.styleSampleString = 'hidden';
-    //         this.formSampleString = 'visible';   
-    //     }
-    // }
 
     render() {
         const { name, email, phone, infoArray, formDisplay } = this.state;
 
         return(
             <div className="generalInfo">
-                {/* <InfoStyled infoArray={infoArray} display={styleDisplay}/> */}
                 <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} name={name} phone={phone} email={email}/>
             </div>
         )

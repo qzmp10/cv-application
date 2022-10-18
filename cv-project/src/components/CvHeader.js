@@ -1,4 +1,5 @@
 import React from 'react';
+import GeneralInfo from './GeneralInfo';
 
 class CvHeader extends React.Component {
 
@@ -7,13 +8,15 @@ class CvHeader extends React.Component {
     }
 
     render() {
+        const {nameState, emailState, phoneState} = this.props;
+
         return (
             <div className='cvHeader'>
                 <div className='picture'></div>
                 <div className='info'>
-                    <div className='name'></div>
-                    <div className='email'></div>
-                    <div className='phone'></div>
+                    <div className='name'>{nameState}</div>
+                    <div className='email'>{emailState}</div>
+                    <div className='phone'>{phoneState}</div>
                 </div>
             </div>
         )

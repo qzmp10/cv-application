@@ -10,23 +10,46 @@ class App extends React.Component {
 
   constructor(props) {
     super(props)
+
+    this.state = {
+      nameState: 'Name',
+      emailState: 'E-mail',
+      phoneState: 'Phone Number'
+    }
+
+  }
+
+  infoCallbackFn = (nameData, emailData, phoneData) => {
+    this.setState({
+      nameState: nameData,
+      emailState: emailData,
+      phoneState: phoneData,
+    })
+  }
+
+  educationCallBackFn = (schoolData, locationData, degreeData) => {
+    console.log('hey');
   }
   
   render() {
+
+    console.log(this.state.nameState);
+    const {nameState, emailState, phoneState} = this.state;
+
     return (
       <><h1 className='pageHeader'>CV GENERATOR</h1>
 
       <div className='pageContainer'>
 
       <div className="formContainer">
-        <GeneralInfo/>
+        <GeneralInfo callbackFn={this.infoCallbackFn}/>
         <Education/>
         <Experience/>
         <Projects/>
       </div>
 
       <div className = 'cvContainer'>
-        <CvHeader/>
+        <CvHeader nameState = {nameState} emailState={emailState} phoneState={phoneState}/>
       </div>
       </div>
       </>
