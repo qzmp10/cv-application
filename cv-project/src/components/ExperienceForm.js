@@ -8,7 +8,6 @@ class ExperienceForm extends React.Component {
     render() {
 
         const {title} = this.props;
-        const {field} = this.props;
         const {company} = this.props;
         const {location} = this.props;
         const {duration} = this.props;
@@ -25,15 +24,6 @@ class ExperienceForm extends React.Component {
                       value={title}
                       id='title' 
                       type="text"/>
-                    </div>
-
-                    <div className='inputDiv'>
-                      <label htmlFor="field">Field: </label>
-                      <input 
-                      onChange={handleChange}
-                      value={field}
-                      id='field'
-                      type="text"/>  
                     </div>
 
                     <div className='inputDiv'>

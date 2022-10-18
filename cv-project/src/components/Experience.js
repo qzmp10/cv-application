@@ -7,7 +7,6 @@ class Experience extends React.Component {
 
         this.state = {
             title: '',
-            field: '',
             company: '',
             location: '',
             duration: '',
@@ -19,11 +18,6 @@ class Experience extends React.Component {
         if(e.target.id === "title") {
             this.setState({
                 title: e.target.value,
-            })
-        }
-        if(e.target.id === "field") {
-            this.setState({
-                field: e.target.value,
             })
         }
         if(e.target.id === "company") {
@@ -42,7 +36,7 @@ class Experience extends React.Component {
             })
         }
 
-        console.log(this.state.title, this.state.field)
+        console.log(this.state.title)
     }
 
     submitExperience = (e) => {
@@ -51,7 +45,6 @@ class Experience extends React.Component {
 
         let tempArray = [];
         tempArray.push(this.state.title);
-        tempArray.push(this.state.field);
         tempArray.push(this.state.company);
         tempArray.push(this.state.location);
         tempArray.push(this.state.duration);
@@ -65,10 +58,10 @@ class Experience extends React.Component {
 
     render() {
 
-        const {title, field, company, location, duration, experienceArray} = this.state;
+        const {title, company, location, duration, experienceArray} = this.state;
 
         return(
-            <ExperienceForm title={title} field = {field} company={company} location={location} 
+            <ExperienceForm title={title} company={company} location={location} 
             duration={duration} handleChange={this.handleChange} submitExperience={this.submitExperience}/>
         )
     }
