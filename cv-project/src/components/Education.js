@@ -9,7 +9,6 @@ class Education extends React.Component {
             school: '',
             location: '',
             degree: '',
-            subject: '',
             educationArray: []
         }
     }
@@ -30,12 +29,6 @@ class Education extends React.Component {
                 degree: e.target.value,
             })
         }
-        if(e.target.id === "subject") {
-            this.setState({
-                subject: e.target.value,
-            })
-        }
-        console.log(this.state.school, this.state.degree, this.state.subject)
     }
 
     submitEducation = (e) => {
@@ -46,7 +39,6 @@ class Education extends React.Component {
         tempArray.push(this.state.school);
         tempArray.push(this.state.location);
         tempArray.push(this.state.degree);
-        tempArray.push(this.state.subject);
 
         this.setState({
             educationArray: tempArray
@@ -59,7 +51,7 @@ class Education extends React.Component {
         const { school, location, degree, subject, educationArray } = this.state;
 
         return(
-            <EducationForm handleChange={this.handleChange} school={school} location={location} degree={degree} subject={subject} submitEducation={this.submitEducation}/>
+            <EducationForm handleChange={this.handleChange} school={school} location={location} degree={degree}  submitEducation={this.submitEducation}/>
         )
     }
 }

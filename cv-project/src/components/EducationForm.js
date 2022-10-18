@@ -44,15 +44,6 @@ class EducationForm extends React.Component {
                       type="text"/>
                     </div>   
 
-                    <div className='inputDiv'>
-                    <label htmlFor="subject">Subject: </label>
-                    <input 
-                    onChange={handleChange}
-                      value={subject}
-                      id="subject" 
-                      type="text"/>
-                    </div>   
-
                     <button className="submit" type="submit">Submit</button>
                 </form>
         )
