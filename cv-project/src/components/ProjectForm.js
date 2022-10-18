@@ -6,36 +6,38 @@ class ProjectForm extends React.Component {
     }
 
     render() {
+
+      const {profile, project, projectDescription, submitProjects, handleChange} = this.props;
         return(
-            <form>
+            <form onSubmit={submitProjects}>
                  <h2 className = "formHeader">Github</h2>
                     <div className='inputDiv'>
-                      <label htmlFor="">Github Profile: </label>
+                      <label htmlFor="profile">Github Profile: </label>
                       <input 
-                    //   onChange=''
-                    //   value=''
-                      id=''
+                      onChange={handleChange}
+                      value={profile}
+                      id='profile'
                       type='url'
                       placeholder='Example: https://github.com/user'/>
                     </div>
 
                     <div className='inputDiv'>
-                    <label htmlFor="">Top Project: </label>
+                    <label htmlFor="project">Top Project: </label>
                     <input 
-                    // onChange=''
-                    //   value=''
-                      id='' 
+                    onChange={handleChange}
+                      value={project}
+                      id='project' 
                       type="url"
                       placeholder='Example: https://github.com/user/project-repo'
                       />
                     </div> 
 
                     <div className='inputDiv'>
-                    <label htmlFor="">Project Description: </label>
+                    <label htmlFor="projectDescription">Project Description: </label>
                     <textarea 
-                    id=''
-                    // value=''
-                    // onChange=''
+                    id='projectDescription'
+                    value={projectDescription}
+                    onChange={handleChange}
                     > </textarea>
                     </div> 
 

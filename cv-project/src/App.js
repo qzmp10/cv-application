@@ -18,10 +18,10 @@ class App extends React.Component {
       <div className='pageContainer'>
 
       <div className="formContainer">
-        <GeneralInfo />
-        <Education />
-        <Experience />
-        <Projects />
+        <GeneralInfo/>
+        <Education/>
+        <Experience/>
+        <Projects/>
       </div>
 
       <div className = 'cvContainer'>
