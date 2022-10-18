@@ -6,51 +6,60 @@ class ExperienceForm extends React.Component {
     }
 
     render() {
+
+        const {title} = this.props;
+        const {field} = this.props;
+        const {company} = this.props;
+        const {location} = this.props;
+        const {duration} = this.props;
+        const {handleChange} = this.props;
+        const {submitExperience} = this.props;
+
         return(
-            <form className='experience'>
+            <form onSubmit={submitExperience} className='experience'>
                 <h2 className = "formHeader">Experience</h2>
                     <div className='inputDiv'>
-                      <label htmlFor="">Job Title: </label>
+                      <label htmlFor="title">Job Title: </label>
                       <input 
-                      onChange=''
-                      value=''
-                      id='' 
+                      onChange={handleChange}
+                      value={title}
+                      id='title' 
                       type="text"/>
                     </div>
 
                     <div className='inputDiv'>
-                      <label htmlFor="">Field: </label>
+                      <label htmlFor="field">Field: </label>
                       <input 
-                      onChange=''
-                      value=''
-                      id=''
+                      onChange={handleChange}
+                      value={field}
+                      id='field'
                       type="text"/>  
                     </div>
 
                     <div className='inputDiv'>
-                    <label htmlFor="">Company: </label>
+                    <label htmlFor="company">Company: </label>
                     <input 
-                    onChange=''
-                      value=''
-                      id='' 
+                    onChange={handleChange}
+                      value={company}
+                      id='company' 
                       type="text"/>
                     </div> 
 
                     <div className='inputDiv'>
-                    <label htmlFor="">Location: </label>
+                    <label htmlFor="location">Location: </label>
                     <input 
-                    onChange=''
-                      value=''
-                      id='' 
+                    onChange={handleChange}
+                      value={location}
+                      id='location' 
                       type="text"/>
                     </div> 
 
                     <div className='inputDiv'>
-                    <label htmlFor="">Duration: </label>
+                    <label htmlFor="duration">Duration: </label>
                     <input 
-                    onChange=''
-                      value=''
-                      id='' 
+                    onChange={handleChange}
+                      value={duration}
+                      id='duration' 
                       type="text"/>
                     </div> 
                    
