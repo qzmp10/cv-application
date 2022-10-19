@@ -11,7 +11,6 @@ class EducationForm extends React.Component {
         const {school} = this.props;
         const {degree} = this.props;
         const {location} = this.props;
-        const {subject} = this.props;
         const {submitEducation} = this.props;
 
         return(

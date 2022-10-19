@@ -43,6 +43,8 @@ class Experience extends React.Component {
 
         e.preventDefault();
 
+        console.log('changing state')
+
         let tempArray = [];
         tempArray.push(this.state.title);
         tempArray.push(this.state.company);
@@ -51,7 +53,12 @@ class Experience extends React.Component {
 
         this.setState({
             experienceArray: tempArray
+        }, () => { 
+            console.log('new state', this.state);
+            this.props.callbackFn(this.state.experienceArray);
         })
+
+        
 
         console.log(this.state.experienceArray)
     }

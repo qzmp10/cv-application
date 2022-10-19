@@ -39,6 +39,7 @@ class GeneralInfo extends React.Component {
     }
 
     submitInfo = (e) => {
+
         e.preventDefault();
 
         let tempArray = [];

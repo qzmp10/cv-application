@@ -5,6 +5,7 @@ import Education from './components/Education'
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import CvHeader from './components/CvHeader';
+import ExperienceDiv from './components/ExperienceDiv';
 
 class App extends React.Component {
 
@@ -14,9 +15,11 @@ class App extends React.Component {
     this.state = {
       nameState: 'Name',
       emailState: 'E-mail',
-      phoneState: 'Phone Number'
+      phoneState: 'Phone Number',
+      experienceArray: []
     }
 
+    this.tempArray = [];
   }
 
   infoCallbackFn = (nameData, emailData, phoneData) => {
@@ -27,14 +30,23 @@ class App extends React.Component {
     })
   }
 
-  educationCallBackFn = (schoolData, locationData, degreeData) => {
-    console.log('hey');
+  experienceCallBackFn = (experienceData) => {
+
+    this.tempArray.push(experienceData);
+    
+    this.setState({
+      experienceArray: this.tempArray
+    }, () => { 
+      console.log('new state', this.state)
+  })
   }
+
+
+
   
   render() {
 
-    console.log(this.state.nameState);
-    const {nameState, emailState, phoneState} = this.state;
+    const {nameState, emailState, phoneState, experienceArray} = this.state;
 
     return (
       <><h1 className='pageHeader'>CV GENERATOR</h1>
@@ -44,12 +56,13 @@ class App extends React.Component {
       <div className="formContainer">
         <GeneralInfo callbackFn={this.infoCallbackFn}/>
         <Education/>
-        <Experience/>
+        <Experience callbackFn={this.experienceCallBackFn}/>
         <Projects/>
       </div>
 
       <div className = 'cvContainer'>
         <CvHeader nameState = {nameState} emailState={emailState} phoneState={phoneState}/>
+        <ExperienceDiv experienceArray={experienceArray}/>
       </div>
       </div>
       </>
