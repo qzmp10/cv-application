@@ -46,6 +46,8 @@ class Projects extends React.Component {
             githubArray: tempArray
         })
 
+        this.props.callbackFn(this.state.profile, this.state.project, this.state.projectDescription)
+
         console.log(this.state.githubArray)
     }
     

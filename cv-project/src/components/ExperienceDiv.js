@@ -10,7 +10,7 @@ class ExperienceDiv extends React.Component {
         
         return(
         <>
-        <h1 className='experienceHeader'>Experience</h1>
+        <h2 className='experienceHeader'>Experience</h2>
         <div className='experienceDiv'>
             {experienceArray.map((data) => {
                     return(

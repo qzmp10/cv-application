@@ -44,11 +44,13 @@ class Education extends React.Component {
             educationArray: tempArray
         })
 
+        this.props.callbackFn(this.state.school, this.state.location, this.state.degree)
+
         console.log(this.state.educationArray)
     }
 
     render() {
-        const { school, location, degree, subject, educationArray } = this.state;
+        const { school, location, degree, educationArray } = this.state;
 
         return(
             <EducationForm handleChange={this.handleChange} school={school} location={location} degree={degree}  submitEducation={this.submitEducation}/>

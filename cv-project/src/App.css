@@ -147,20 +147,89 @@ body {
 
 .title {
   padding-left: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .companyLocation {
   padding-left: 1rem;
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .duration {
   padding-left: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: italic;
 }
 
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
 
+.projectsHeader {
+  padding: 1rem;
+  background-color: rgb(167, 234, 255);
+  margin: 0;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
 
+.profile {
+  padding-left: 1rem;
+  font-size: 1.3rem;
+}
+
+.project {
+  padding-left: 1rem;
+  font-size: 1.3rem;
+}
+
+.description {
+  padding-left: 1rem;
+  font-size: 1.15rem;
+}
+
+.gh {
+  padding-left: 1rem;
+  font-size: 1rem;
+}
+
+.top {
+  padding-left: 1rem;
+  font-size: 1rem;
+}
+
+.rm {
+  padding-left: 1rem;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.educationHeader {
+  padding: 1rem;
+  background-color: rgb(167, 234, 255);
+  margin: 0;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.educationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.school {
+  padding-left: 1rem;
+}
+
+.location {
+  padding-left: 1rem;
+}
+
+.degree {
+  font-size: 1.3rem;
+  padding-left: 1rem;
+}
