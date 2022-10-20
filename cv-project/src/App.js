@@ -22,12 +22,11 @@ class App extends React.Component {
       profileState: '', 
       projectState: '',
       descriptionState: '',
-      schoolState: '',
-      locationState: '',
-      degreeState: ''
+      educationArray: [],
     }
 
     this.tempArray = [];
+    this.tempArray2 = [];
   }
 
   infoCallbackFn = (nameData, emailData, phoneData) => {
@@ -57,12 +56,15 @@ class App extends React.Component {
     })
   }
 
-  educationCallBackFn = (schoolData, locationData, degreeData) => {
+  educationCallBackFn = (educationData) => {
+    this.tempArray2.push(educationData);
+
     this.setState({
-      schoolState: schoolData,
-      locationState: locationData,
-      degreeState: degreeData
-    })
+      educationArray: this.tempArray2
+  }, () => { 
+      console.log('new state', this.state);
+  })
+
   }
 
 
@@ -71,7 +73,7 @@ class App extends React.Component {
   render() {
 
     const {nameState, emailState, phoneState, experienceArray, profileState, projectState, descriptionState, 
-    schoolState, locationState, degreeState} = this.state;
+    schoolState, locationState, degreeState, educationArray} = this.state;
 
     return (
       <><h1 className='pageHeader'>CV GENERATOR</h1>
@@ -89,7 +91,7 @@ class App extends React.Component {
         <CvHeader nameState = {nameState} emailState={emailState} phoneState={phoneState}/>
         <ExperienceDiv experienceArray={experienceArray}/>
         <ProjectDiv profileState={profileState} projectState={projectState} descriptionState={descriptionState}/>
-        <EducationDiv schoolState={schoolState} locationState={locationState} degreeState={degreeState} />
+        <EducationDiv educationArray={educationArray} />
       </div>
       </div>
       </>

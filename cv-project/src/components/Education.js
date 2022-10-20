@@ -42,9 +42,11 @@ class Education extends React.Component {
 
         this.setState({
             educationArray: tempArray
+        }, () => { 
+            console.log('new state', this.state);
+            this.props.callbackFn(this.state.educationArray);
         })
 
-        this.props.callbackFn(this.state.school, this.state.location, this.state.degree)
 
         console.log(this.state.educationArray)
     }

@@ -221,6 +221,12 @@ body {
   gap: 0.3rem;
 }
 
+.educationDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
 .school {
   padding-left: 1rem;
 }
