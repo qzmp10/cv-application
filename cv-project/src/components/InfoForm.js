@@ -12,6 +12,7 @@ class InfoForm extends React.Component {
         const { name } = this.props;
         const { email } = this.props;
         const { phone } = this.props;
+        const {fileUrl, handleFile} = this.props;
         
 
         return(
@@ -44,6 +45,12 @@ class InfoForm extends React.Component {
                       type="email"/>
                     </div>   
                     <button className="submit" type="submit">Submit</button>
+                    <input 
+                    onChange={handleFile}
+                    type='file'
+                    id='file'
+                    value={fileUrl}
+                    />
                 </form>
         )
 

@@ -12,6 +12,7 @@ class GeneralInfo extends React.Component {
             name: '',
             email: '',
             phone: '',
+            fileUrl: '',
             infoArray: [],
             id: uniqid(),
         }
@@ -56,13 +57,19 @@ class GeneralInfo extends React.Component {
         console.log(this.state.infoArray);
     }
 
+    handleFile = (e) => {
+        this.setState({
+            fileUrl: e.target.value
+        })
+        console.log(this.state.fileUrl)
+    }
 
     render() {
-        const { name, email, phone, infoArray, formDisplay } = this.state;
+        const { name, email, phone, infoArray, formDisplay, fileUrl } = this.state;
 
         return(
             <div className="generalInfo">
-                <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} name={name} phone={phone} email={email}/>
+                <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} handleFile={this.handleFile} name={name} phone={phone} email={email} fileUrl={fileUrl}/>
             </div>
         )
     }
