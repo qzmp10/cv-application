@@ -189,6 +189,7 @@ body {
 .description {
   padding-left: 1rem;
   font-size: 1.15rem;
+  padding-right: 1rem;
 }
 
 .gh {
@@ -219,6 +220,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  
 }
 
 .educationDiv {
@@ -229,10 +231,12 @@ body {
 
 .school {
   padding-left: 1rem;
+  font-style: italic;
 }
 
 .location {
   padding-left: 1rem;
+  font-style: italic;
 }
 
 .degree {

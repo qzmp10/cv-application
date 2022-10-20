@@ -19,11 +19,11 @@ class App extends React.Component {
       emailState: 'E-mail',
       phoneState: 'Phone Number',
       fileState: '',
-      experienceArray: [],
-      profileState: '', 
-      projectState: '',
-      descriptionState: '',
-      educationArray: [],
+      experienceArray: [['Job', 'Company', 'Location', '5 years']],
+      profileState: 'Profile URL', 
+      projectState: 'Top Project URL',
+      descriptionState: 'I consider this my top project because reasons. I learned this, this and this. This project made me practice my skills in this and that...',
+      educationArray: [['School', 'Location', 'Degree']],
     }
 
     this.tempArray = [];

@@ -17,10 +17,9 @@ class EducationDiv extends React.Component {
                 {educationArray.map((data) => {
                         return(
                             <div className='educationContainer'>
-                            <div className = 'degree' key={Math.random() * 10000}>{data[0]}</div>
-                            <div className='school' key={Math.random() * 10000}>{data[1]}
-                            , {data[2]}</div>
-                            <div className = 'location' key={Math.random() * 10000}>Location: {data[3]}</div>
+                            <div className = 'degree' key={Math.random() * 10000}>{data[2]}</div>
+                            <div className='school' key={Math.random() * 10000}>{data[0]}
+                            , {data[1]}</div>
                             </div>
                         )
                 })}

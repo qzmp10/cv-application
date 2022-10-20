@@ -12,7 +12,7 @@ class CvHeader extends React.Component {
 
         return (
             <div className='cvHeader'>
-                <img className='picture' src={file} alt='your profile'/>
+                <img className='picture' src={file} alt='Your Profile'/>
                 <div className='info'>
                     <div className='name'>{nameState}</div>
                     <div className='email'>{emailState}</div>
