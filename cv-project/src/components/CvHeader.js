@@ -8,11 +8,11 @@ class CvHeader extends React.Component {
     }
 
     render() {
-        const {nameState, emailState, phoneState} = this.props;
+        const {nameState, emailState, phoneState, file} = this.props;
 
         return (
             <div className='cvHeader'>
-                <div className='picture'></div>
+                <img className='picture' src={file} alt='your profile'/>
                 <div className='info'>
                     <div className='name'>{nameState}</div>
                     <div className='email'>{emailState}</div>

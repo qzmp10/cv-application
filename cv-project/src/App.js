@@ -18,6 +18,7 @@ class App extends React.Component {
       nameState: 'Name',
       emailState: 'E-mail',
       phoneState: 'Phone Number',
+      fileState: '',
       experienceArray: [],
       profileState: '', 
       projectState: '',
@@ -29,11 +30,13 @@ class App extends React.Component {
     this.tempArray2 = [];
   }
 
-  infoCallbackFn = (nameData, emailData, phoneData) => {
+  infoCallbackFn = (nameData, emailData, phoneData, fileData) => {
+    let url = URL.createObjectURL(fileData[0]);
     this.setState({
       nameState: nameData,
       emailState: emailData,
       phoneState: phoneData,
+      fileState: url
     })
   }
 
@@ -73,7 +76,7 @@ class App extends React.Component {
   render() {
 
     const {nameState, emailState, phoneState, experienceArray, profileState, projectState, descriptionState, 
-    schoolState, locationState, degreeState, educationArray} = this.state;
+    schoolState, locationState, degreeState, educationArray, fileState} = this.state;
 
     return (
       <><h1 className='pageHeader'>CV GENERATOR</h1>
@@ -88,7 +91,7 @@ class App extends React.Component {
       </div>
 
       <div className = 'cvContainer'>
-        <CvHeader nameState = {nameState} emailState={emailState} phoneState={phoneState}/>
+        <CvHeader nameState = {nameState} emailState={emailState} phoneState={phoneState} file={fileState}/>
         <ExperienceDiv experienceArray={experienceArray}/>
         <ProjectDiv profileState={profileState} projectState={projectState} descriptionState={descriptionState}/>
         <EducationDiv educationArray={educationArray} />

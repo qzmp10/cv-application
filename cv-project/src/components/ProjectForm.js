@@ -12,7 +12,7 @@ class ProjectForm extends React.Component {
             <form onSubmit={submitProjects}>
                  <h2 className = "formHeader">Github</h2>
                     <div className='inputDiv'>
-                      <label htmlFor="profile">Github Profile: </label>
+                      <label htmlFor="profile">Github Profile </label>
                       <input 
                       onChange={handleChange}
                       value={profile}
@@ -22,7 +22,7 @@ class ProjectForm extends React.Component {
                     </div>
 
                     <div className='inputDiv'>
-                    <label htmlFor="project">Top Project: </label>
+                    <label htmlFor="project">Top Project </label>
                     <input 
                     onChange={handleChange}
                       value={project}
@@ -33,7 +33,7 @@ class ProjectForm extends React.Component {
                     </div> 
 
                     <div className='inputDiv'>
-                    <label htmlFor="projectDescription">Project Description: </label>
+                    <label htmlFor="projectDescription">Project Description </label>
                     <textarea 
                     id='projectDescription'
                     value={projectDescription}

@@ -19,7 +19,7 @@ class InfoForm extends React.Component {
             <form onSubmit={submitInfo}>
                     <h2 className = "formHeader">Enter your information</h2>
                     <div className='inputDiv'>
-                      <label htmlFor="name">Name: </label>
+                      <label htmlFor="name">Name </label>
                       <input 
                       onChange={handleChange}
                       value={name}
@@ -28,7 +28,7 @@ class InfoForm extends React.Component {
                     </div>
 
                     <div className='inputDiv'>
-                      <label htmlFor="phone">Phone number: </label>
+                      <label htmlFor="phone">Phone number </label>
                       <input 
                       onChange={handleChange}
                       value={phone}
@@ -37,20 +37,26 @@ class InfoForm extends React.Component {
                     </div>
 
                     <div className='inputDiv'>
-                    <label htmlFor="email">E-mail: </label>
+                    <label htmlFor="email">E-mail </label>
                     <input 
                     onChange={handleChange}
                       value={email}
                       id="email" 
                       type="email"/>
                     </div>   
-                    <button className="submit" type="submit">Submit</button>
+                    
+                    <div className='inputDiv'>
+                      <label htmlFor='file'>Upload Picture</label>
                     <input 
                     onChange={handleFile}
                     type='file'
                     id='file'
-                    value={fileUrl}
+                    files={fileUrl}
+                    accept='image/*'
                     />
+                    </div>
+
+                    <button className="submit" type="submit">Submit</button>
                 </form>
         )
 

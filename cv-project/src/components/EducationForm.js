@@ -17,7 +17,7 @@ class EducationForm extends React.Component {
             <form onSubmit={submitEducation} className='education'>
                     <h2 className = "formHeader">Education</h2>
                     <div className='inputDiv'>
-                      <label htmlFor="school">School: </label>
+                      <label htmlFor="school">School </label>
                       <input 
                       onChange={handleChange}
                       value={school}
@@ -26,7 +26,7 @@ class EducationForm extends React.Component {
                     </div>
 
                     <div className='inputDiv'>
-                      <label htmlFor="location">Location: </label>
+                      <label htmlFor="location">Location </label>
                       <input 
                       onChange={handleChange}
                       value={location}
@@ -35,7 +35,7 @@ class EducationForm extends React.Component {
                     </div>
 
                     <div className='inputDiv'>
-                    <label htmlFor="degree">Degree: </label>
+                    <label htmlFor="degree">Degree </label>
                     <input 
                     onChange={handleChange}
                       value={degree}

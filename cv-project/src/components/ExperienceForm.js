@@ -18,7 +18,7 @@ class ExperienceForm extends React.Component {
             <form onSubmit={submitExperience} className='experience'>
                 <h2 className = "formHeader">Experience</h2>
                     <div className='inputDiv'>
-                      <label htmlFor="title">Job Title: </label>
+                      <label htmlFor="title">Job Title </label>
                       <input 
                       onChange={handleChange}
                       value={title}
@@ -27,7 +27,7 @@ class ExperienceForm extends React.Component {
                     </div>
 
                     <div className='inputDiv'>
-                    <label htmlFor="company">Company: </label>
+                    <label htmlFor="company">Company </label>
                     <input 
                     onChange={handleChange}
                       value={company}
@@ -36,7 +36,7 @@ class ExperienceForm extends React.Component {
                     </div> 
 
                     <div className='inputDiv'>
-                    <label htmlFor="location">Location: </label>
+                    <label htmlFor="location">Location </label>
                     <input 
                     onChange={handleChange}
                       value={location}
@@ -45,7 +45,7 @@ class ExperienceForm extends React.Component {
                     </div> 
 
                     <div className='inputDiv'>
-                    <label htmlFor="duration">Duration: </label>
+                    <label htmlFor="duration">Duration </label>
                     <input 
                     onChange={handleChange}
                       value={duration}

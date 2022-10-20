@@ -47,20 +47,28 @@ class GeneralInfo extends React.Component {
         tempArray.push(this.state.name);
         tempArray.push(this.state.email);
         tempArray.push(this.state.phone);
+        tempArray.push(this.state.fileUrl);
 
         this.setState({
             infoArray: tempArray
         })
 
-        this.props.callbackFn(this.state.name, this.state.email, this.state.phone);
+        this.props.callbackFn(this.state.name, this.state.email, this.state.phone, this.state.fileUrl);
 
         console.log(this.state.infoArray);
     }
 
     handleFile = (e) => {
+        e.preventDefault();
+        // let urlFile = URL.createObjectURL(e.target.files[0]);
+        // let blobToImg = URL.createObjectURL(urlFile)
+        // console.log(blobToImg)
+        console.log(e.target.files)
+
         this.setState({
-            fileUrl: e.target.value
+            fileUrl: e.target.files
         })
+
         console.log(this.state.fileUrl)
     }
 
