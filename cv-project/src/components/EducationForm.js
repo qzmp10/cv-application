@@ -1,52 +1,42 @@
 import React from "react"
 
-class EducationForm extends React.Component {
-    constructor() {
-        super()
-    }
+function EducationForm(props) {
 
-    render() {
+  const { school, degree, location, handleChange, submitEducation } = props;
 
-        const {handleChange} = this.props;
-        const {school} = this.props;
-        const {degree} = this.props;
-        const {location} = this.props;
-        const {submitEducation} = this.props;
+  return (
+    <form onSubmit={submitEducation} className='education'>
+      <h2 className="formHeader">Education</h2>
+      <div className='inputDiv'>
+        <label htmlFor="school">School </label>
+        <input
+          onChange={handleChange}
+          value={school}
+          id="school"
+          type="text" />
+      </div>
 
-        return(
-            <form onSubmit={submitEducation} className='education'>
-                    <h2 className = "formHeader">Education</h2>
-                    <div className='inputDiv'>
-                      <label htmlFor="school">School </label>
-                      <input 
-                      onChange={handleChange}
-                      value={school}
-                      id="school" 
-                      type="text"/>
-                    </div>
+      <div className='inputDiv'>
+        <label htmlFor="location">Location </label>
+        <input
+          onChange={handleChange}
+          value={location}
+          id="location"
+          type="text" />
+      </div>
 
-                    <div className='inputDiv'>
-                      <label htmlFor="location">Location </label>
-                      <input 
-                      onChange={handleChange}
-                      value={location}
-                      id="location" 
-                      type="text"/>  
-                    </div>
+      <div className='inputDiv'>
+        <label htmlFor="degree">Degree </label>
+        <input
+          onChange={handleChange}
+          value={degree}
+          id="degree"
+          type="text" />
+      </div>
 
-                    <div className='inputDiv'>
-                    <label htmlFor="degree">Degree </label>
-                    <input 
-                    onChange={handleChange}
-                      value={degree}
-                      id="degree" 
-                      type="text"/>
-                    </div>   
-
-                    <button className="submit" type="submit">Submit</button>
-                </form>
-        )
-    }
+      <button className="submit" type="submit">Submit</button>
+    </form>
+  )
 }
 
 export default EducationForm
