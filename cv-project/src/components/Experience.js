@@ -49,7 +49,6 @@ function Experience(props) {
         tempArray.push(duration);
 
         setExperienceArray(tempArray);
-
     }
 
     return (
