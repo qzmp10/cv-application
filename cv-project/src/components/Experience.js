@@ -1,77 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import ExperienceForm from './ExperienceForm';
 
-class Experience extends React.Component {
-    constructor() {
-        super()
+function Experience(props) {
+    const [title, setTitle] = useState('');
+    const [duration, setDuration] = useState('');
+    const [location, setLocation] = useState('');
+    const [company, setCompany] = useState('');
+    const [experienceArray, setExperienceArray] = useState([]);
 
-        this.state = {
-            title: '',
-            company: '',
-            location: '',
-            duration: '',
-            experienceArray: []
+    const counter = useRef(0);
+
+    useEffect(() => {
+        //components mounts + renders, which makes any function here run twice, therefore,
+        // i do a counter, and only when component renders twice do i use the callback function 
+        counter.current = counter.current + 1;
+        console.log(counter.current)
+        if (counter.current >= 3) {
+            console.log('wait for it...', experienceArray);
+            props.callbackFn(experienceArray);
+        }
+
+    }, [experienceArray])
+
+    const handleChange = (e) => {
+        if (e.target.id === "title") {
+            setTitle(e.target.value);
+        }
+        if (e.target.id === "company") {
+            setCompany(e.target.value);
+        }
+        if (e.target.id === "location") {
+            setLocation(e.target.value);
+        }
+        if (e.target.id === "duration") {
+            setDuration(e.target.value);
         }
     }
 
-    handleChange = (e) => {
-        if(e.target.id === "title") {
-            this.setState({
-                title: e.target.value,
-            })
-        }
-        if(e.target.id === "company") {
-            this.setState({
-                company: e.target.value,
-            })
-        }
-        if(e.target.id === "location") {
-            this.setState({
-                location: e.target.value,
-            })
-        }
-        if(e.target.id === "duration") {
-            this.setState({
-                duration: e.target.value,
-            })
-        }
-
-        console.log(this.state.title)
-    }
-
-    submitExperience = (e) => {
+    const submitExperience = (e) => {
 
         e.preventDefault();
 
-        console.log('changing state')
 
         let tempArray = [];
-        tempArray.push(this.state.title);
-        tempArray.push(this.state.company);
-        tempArray.push(this.state.location);
-        tempArray.push(this.state.duration);
+        tempArray.push(title);
+        tempArray.push(company);
+        tempArray.push(location);
+        tempArray.push(duration);
 
-        this.setState({
-            experienceArray: tempArray
-        }, () => { 
-            console.log('new state', this.state);
-            this.props.callbackFn(this.state.experienceArray);
-        })
+        setExperienceArray(tempArray);
 
-        
-
-        console.log(this.state.experienceArray)
     }
 
-    render() {
+    return (
+        <ExperienceForm title={title} company={company} location={location}
+            duration={duration} handleChange={handleChange} submitExperience={submitExperience} />
+    )
 
-        const {title, company, location, duration, experienceArray} = this.state;
-
-        return(
-            <ExperienceForm title={title} company={company} location={location} 
-            duration={duration} handleChange={this.handleChange} submitExperience={this.submitExperience}/>
-        )
-    }
 }
-
 export default Experience;

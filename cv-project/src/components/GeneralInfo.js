@@ -1,86 +1,52 @@
-import React from 'react';
-import CvHeader from './CvHeader';
+import React, { useState } from 'react';
 import InfoForm from "./InfoForm"
-import uniqid from "uniqid";
 
-class GeneralInfo extends React.Component {
+function GeneralInfo(props) {
 
-    constructor(props) {
-        super(props);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [fileUrl, setFileUrl] = useState('');
 
-        this.state = {
-            name: '',
-            email: '',
-            phone: '',
-            fileUrl: '',
-            infoArray: [],
-            id: uniqid(),
+    const handleChange = (e) => {
+
+        if (e.target.id === "name") {
+            setName(e.target.value)
         }
-
+        if (e.target.id === "email") {
+            setEmail(e.target.value)
+        }
+        if (e.target.id === "phone") {
+            setPhone(e.target.value)
+        }
     }
 
-    handleChange = (e) => {
-        if(e.target.id === "name") {
-            this.setState({
-                name: e.target.value,
-            })
-        }
-        if(e.target.id === "email") {
-            this.setState({
-                email: e.target.value,
-            })
-        }
-        if(e.target.id === "phone") {
-            this.setState({
-                phone: e.target.value,
-            })
-        }
+    const handleFile = (e) => {
 
-        console.log(this.state.name, this.state.email, this.state.phone)
+        e.preventDefault();
+
+        setFileUrl(e.target.files);
     }
 
-    submitInfo = (e) => {
-
+    const submitInfo = (e) => {
         e.preventDefault();
 
         let tempArray = [];
-        tempArray.push(this.state.name);
-        tempArray.push(this.state.email);
-        tempArray.push(this.state.phone);
-        tempArray.push(this.state.fileUrl);
 
-        this.setState({
-            infoArray: tempArray
-        })
+        tempArray.push(name)
+        tempArray.push(email)
+        tempArray.push(phone)
+        tempArray.push(fileUrl)
 
-        this.props.callbackFn(this.state.name, this.state.email, this.state.phone, this.state.fileUrl);
-
-        console.log(this.state.infoArray);
+        props.callbackFn(name, email, phone, fileUrl)
     }
 
-    handleFile = (e) => {
-        e.preventDefault();
-        // let urlFile = URL.createObjectURL(e.target.files[0]);
-        // let blobToImg = URL.createObjectURL(urlFile)
-        // console.log(blobToImg)
-        console.log(e.target.files)
+    return (
+        <div className="generalInfo">
+            <InfoForm submitInfo={submitInfo} handleChange={handleChange} handleFile={handleFile} name={name} phone={phone} email={email} fileUrl={fileUrl} />
+        </div>
+    )
 
-        this.setState({
-            fileUrl: e.target.files
-        })
-
-        console.log(this.state.fileUrl)
-    }
-
-    render() {
-        const { name, email, phone, infoArray, formDisplay, fileUrl } = this.state;
-
-        return(
-            <div className="generalInfo">
-                <InfoForm submitInfo={this.submitInfo} handleChange={this.handleChange} handleFile={this.handleFile} name={name} phone={phone} email={email} fileUrl={fileUrl}/>
-            </div>
-        )
-    }
 }
 
 export default GeneralInfo;
