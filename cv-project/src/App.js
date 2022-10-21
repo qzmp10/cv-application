@@ -31,6 +31,7 @@ class App extends React.Component {
   }
 
   infoCallbackFn = (nameData, emailData, phoneData, fileData) => {
+    
     let url = URL.createObjectURL(fileData[0]);
     this.setState({
       nameState: nameData,
