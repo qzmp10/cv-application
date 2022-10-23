@@ -160,10 +160,11 @@ function App(props) {
   }
 
   const educationCallBackFn = (educationData) => {
-    tempArray2.push(educationData);
+    tempArray2.current.push(educationData);
 
-    setEducationArray(tempArray2);
+    setEducationArray(tempArray2.current);
 
+    setUpdate(update + 1);
   }
 
   return (
