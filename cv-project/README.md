@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Devices 
-Display is ompatible with desktop computers. Not compatible with mobile phones.
+Display is compatible with desktop computers. Not compatible with mobile phones.
 
 ## Goals
 This CV application was part of my self-education through the Odin Project curriculum. The intent was to practice my newly acquired React skills, and to digest the newly introduced concepts of state, props and render lists.
